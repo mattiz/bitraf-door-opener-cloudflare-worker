@@ -81,7 +81,7 @@ function respondJson( data ) {
 async function handleRequest(request) {
   if (request.method === 'POST') {
     const formData = await readForm( request )
-    console.log( formData )
+    console.log( `Open door for: ${formData.username}` )
 
     const cookie = await login(formData.username, formData.password)
     await openDoor( cookie )
